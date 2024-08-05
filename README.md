@@ -64,6 +64,15 @@ docker run -d -p 3000:3000 --name=grafana grafana/grafana-enterprise
   Prometheus --> http://<EXTERNAL_IP>:9090/
   Grafana --> http://<EXTERNAL_IP>:3000/
   ```
+- You can check if prometheus is scraping your app data by access below url
+```
+http://<EXTERNAL_IP>:9090/targets/
+```
+You should see an entry for python-app with the status UP.
+- Once prometheus is scraping data, create dashboard in grafana with 'prometheus' as data-source
+- You can execute Query (PromQL) to get data and visualize it in dashboard
+
+
 
 
 
